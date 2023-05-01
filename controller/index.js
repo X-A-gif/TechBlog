@@ -1,7 +1,9 @@
-const router = require('koa-router')()
+const router = require('express').Router();
 
-const homeRouter = require('./home-routes.js');
+const apiRoutes = require('./api');
+const homeRoutes = require('./homeRouter');
 
-router.use('/', homeRouter);
+router.use('/', homeRoutes);
+router.use('/api', apiRoutes);
 
 module.exports = router;
