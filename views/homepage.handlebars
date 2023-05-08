@@ -3,11 +3,11 @@
 
 <div class="row mb-4 project">
     <h2 class="text-uppercase">
-      <a href="/blogpost/{{post.id}}">{{post.title}}</a>
+      <a href="/post/{{post.id}}">{{post.title}}</a>
     </h2>
     <p>
       {{post.description}}
     </p>
-  <div>created by {{post.user.username}} on {{format_date date_created}}</div>
+  <div>created by {{post.user.username}} on {{ date_created}}</div>
 </div>
 {{/each}}

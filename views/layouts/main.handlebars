@@ -11,6 +11,8 @@
     
 </head>
 <body>
+
+  
 <nav class="bg-transparent">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
@@ -20,11 +22,11 @@
         </a>
         <div class="hidden md:block">
           <div class="ml-10 flex items-baseline space-x-4">
-            <a href="#" class="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+            <a href="/" class="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
 
-            <a href="#" class="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</a>
+            <a href="/login" class="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</a>
 
-            <a href="#" class="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Signup</a>
+            <a href="/signup" class="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Signup</a>
           </div>
         </div>
       </div>
@@ -41,6 +43,19 @@
     </div>
   </div>
 
+
+
+  {{#if logged_in}}
+  <div class="hidden md:block">
+    <div class="ml-10 flex items-baseline space-x-4">
+      <a href="/logout" class="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Logout</a>
+      <a href="/create" class="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">post</a>
+
+    </div>
+  </div>
+{{else}}
+
+{{/if}}
   <div class="md:hidden" id="mobile-menu">
     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-black">
       <a href="#" class=" hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
@@ -51,6 +66,8 @@
     </div>
   </div>
 </nav>
+
+{{{body}}}
 
 <script>
   const mobileMenuButton = document.getElementById('mobile-menu-button');
